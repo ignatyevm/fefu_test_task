@@ -1,6 +1,7 @@
 from fastapi import Depends
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.orm.session import close_all_sessions
 
 from api.config import get_database_url
 
@@ -19,4 +20,4 @@ class Database:
         Base.metadata.create_all(self.__engine)
 
     def close(self):
-        self.__session_factory.close_all()
+        close_all_sessions()
