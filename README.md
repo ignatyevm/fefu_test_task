@@ -13,6 +13,10 @@ docker-compose up
 
 
 ## Тесты
+Запуск тестов 
+```bash
+docker-compose up api-service-tests-runner
+```
 Отчет по тестам в ```tests_report.html```
 
 ## Документация
